@@ -1,0 +1,22 @@
+# 依赖
+node_modules/
+
+# 历史备份目录
+backup-*/
+
+# 本地调试 / 临时截图文件（_dbg- 前缀的脚本与截图、临时探查脚本）
+_dbg-*
+_inspect.mjs
+
+# 日志
+*.log
+
+# 系统垃圾文件
+.DS_Store
+Thumbs.db
+
+# 证件照原图（冗余源文件；网站实际只用 assets/members/ 裁剪版）
+证件照/
+
+# 根目录开发截图（dist/ 内的正式交付文件不在此列）
+/screenshot-*.png

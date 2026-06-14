@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>严颖课题组 · Yan Ying Research Group</title>
+  <meta name="description" content="严颖课题组 / Yan Ying Research Group · 南京信息工程大学自动化学院 · 模式识别 · 机器学习 · 脑电分析 · 复杂系统诊断 · 优化" />
+  <!-- 空 favicon:阻止浏览器默认请求 /favicon.ico 造成 404(正式图标待定) -->
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="theme-ivory">
+  <!-- 主题:theme-ivory = 米白/暖纸版(V0.19 试验版)。
+       去掉 body 的 class="theme-ivory" 即可整体回滚到原黑银版，所有米白覆盖集中在 style.css 末尾 theme-ivory 区块。 -->
+
+  <!-- ============ 顶部导航(半透明吸顶) ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#hero">
+        <span class="nav__brand-en">Yan Ying Research Group</span>
+        <span class="nav__brand-sub">NUIST · 自动化学院</span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#hero">首页</a>
+        <a href="#research">研究方向</a>
+        <a href="#team">团队</a>
+        <a href="#achievements">成果</a>
+        <a href="#publications">论文</a>
+        <a href="#admission">招生</a>
+        <a href="#contact">联系</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ 1. Hero 首屏 ============ -->
+    <section class="hero" id="hero">
+      <!-- Hero 背景：纯净纸色，无纹理、无网格、无线条图形，只保留一层极淡中央暖光 -->
+      <!-- 内容层：全屏不对称构图(左主标题 / 右研究焦点组) -->
+      <div class="hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Nanjing University of Information Science &amp; Technology</p>
+          <h1 class="hero__title">严颖课题组</h1>
+          <p class="hero__title-en">Yan Ying Research Group</p>
+          <p class="hero__lead">用机器学习读懂复杂系统与脑电信号，<br />让数据变成诊断和决策。</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#research">探索研究方向</a>
+            <a class="btn btn--ghost" href="#admission">了解招生</a>
+          </div>
+        </div>
+        <!-- 右侧轻量研究焦点组：平衡画面，不抢主标题；细线 + 编号 + 银灰/暖金小点 -->
+        <aside class="hero__aside" aria-label="研究焦点 Research Focus">
+          <p class="hero__aside-label">Research Focus</p>
+          <ul class="hero__focus">
+            <li><a class="hero__focus-link" href="#research-fault-diagnosis"><span class="hero__focus-no">01</span><span class="hero__focus-en">Fault Diagnosis</span><span class="hero__focus-dot" aria-hidden="true"></span></a></li>
+            <li><a class="hero__focus-link" href="#research-bci"><span class="hero__focus-no">02</span><span class="hero__focus-en">Brain-Computer Interface</span><span class="hero__focus-dot" aria-hidden="true"></span></a></li>
+            <li><a class="hero__focus-link" href="#research-power-load-rainfall"><span class="hero__focus-no">03</span><span class="hero__focus-en">Power / Load / Rainfall</span><span class="hero__focus-dot" aria-hidden="true"></span></a></li>
+            <li><a class="hero__focus-link" href="#research-public-opinion"><span class="hero__focus-no">04</span><span class="hero__focus-en">Public Opinion</span><span class="hero__focus-dot" aria-hidden="true"></span></a></li>
+            <li><a class="hero__focus-link" href="#research-optimization"><span class="hero__focus-no">05</span><span class="hero__focus-en">Optimization</span><span class="hero__focus-dot" aria-hidden="true"></span></a></li>
+            <li><a class="hero__focus-link" href="#research-mcu-fpga"><span class="hero__focus-no">06</span><span class="hero__focus-en">MCU / FPGA</span><span class="hero__focus-dot" aria-hidden="true"></span></a></li>
+            <li><a class="hero__focus-link" href="#research-robot-uav"><span class="hero__focus-no">07</span><span class="hero__focus-en">Robotics / UAV</span><span class="hero__focus-dot" aria-hidden="true"></span></a></li>
+          </ul>
+        </aside>
+      </div>
+      <a class="hero__scroll" href="#about" aria-label="向下滚动">
+        <span class="hero__scroll-dot"></span>
+      </a>
+      <!-- Hero 底部自然渐隐：背景丝线在底部被黑雾吃掉，平滑过渡到 About 的底色，无硬切、无桥接线 -->
+      <div class="hero__fade" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ 2. 关于严颖老师 ============ -->
+    <section class="section about" id="about">
+      <div class="container about__grid">
+        <!-- 老师正式照片(来源:NUIST 官方个人主页);加载失败时回退到姓名牌 -->
+        <div class="about__photo reveal-right">
+          <div class="about__photo-ph">
+            <img class="about__photo-img" src="assets/yan-ying-portrait.png"
+                 alt="严颖 老师肖像 · 南京信息工程大学" loading="lazy"
+                 onerror="this.style.display='none';this.closest('.about__photo-ph').classList.add('is-fallback');" />
+            <span class="ph-head" aria-hidden="true"></span>
+            <div class="ph-label" aria-hidden="true">
+              <span>严颖</span>
+              <small>南京信息工程大学自动化学院</small>
+            </div>
+          </div>
+        </div>
+        <div class="about__text reveal-left">
+          <p class="section__eyebrow">关于 / About</p>
+          <h2 class="section__title">严颖</h2>
+          <p class="about__role">副教授 · 硕士生导师 · 南京信息工程大学自动化学院</p>
+          <!-- 官方个人主页链接(主信息源) -->
+          <a class="about__link" href="https://faculty.nuist.edu.cn/yanying/zh_CN/index/110297/list/"
+             target="_blank" rel="noopener noreferrer">查看官方主页 ↗</a>
+          <!-- 研究关键词来源: 个人主页关键词 -->
+          <div class="about__tags" data-render="aboutTags"></div>
+          <p class="about__bio">
+            研究横跨模式识别、机器学习与脑电信号分析，把智能方法落到复杂系统诊断与优化决策的真实问题上。
+            博士师从 IEEE Life Fellow Peter B. Luh 教授，在智能电网、智能建筑与故障诊断领域有深厚积累。
+          </p>
+          <!-- 以下信息来源: 个人主页(详细经历弱化呈现) -->
+          <ul class="about__facts">
+            <li><span>博士学位</span>美国康涅狄格大学(University of Connecticut, 2018)</li>
+            <li><span>学科</span>电气工程及其自动化</li>
+            <li><span>主要任职</span>电气工程系副系主任 · 江苏省气象能源利用与控制工程技术研究中心副主任</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. 研究方向(5 个大卡片) ============ -->
+    <section class="section research" id="research">
+      <div class="container">
+        <div class="section__head reveal-up">
+          <p class="section__eyebrow">研究方向 / Research</p>
+          <h2 class="section__title">七个方向，一条主线</h2>
+          <p class="section__desc">以模式识别、机器学习与优化为核心，把智能方法落到复杂系统、脑机接口、预测与硬件等真实问题上。</p>
+        </div>
+        <!-- 研究产品模块由 SITE_DATA.research 渲染 -->
+        <div class="research__list" data-render="research"></div>
+        <!-- 后续方法提示：克制说明，当前展示基础方向与代表性工作，后续补充课题组提出的新方法（不编造具体方法名，不写成已完成） -->
+        <p class="research__note reveal-up">当前页面先展示课题组已有研究方向与代表性工作；后续将进一步补充课题组提出的新方法、模型与系统成果。</p>
+      </div>
+    </section>
+
+    <!-- ============ 4. 团队成员 / 学生培养 ============ -->
+    <section class="section team" id="team">
+      <!-- 轻量科研抽象视觉：知识/协作网络片段(右上，暖金焦点节点) -->
+      <div class="sec-deco sec-deco--team" aria-hidden="true">
+        <svg viewBox="0 0 440 320" preserveAspectRatio="xMidYMid meet">
+          <circle class="glow" cx="318" cy="96" r="74"/>
+          <line class="ln-dim" x1="58" y1="74" x2="184" y2="138"/>
+          <line class="ln" x1="184" y1="138" x2="318" y2="96"/>
+          <line class="ln-dim" x1="318" y1="96" x2="402" y2="178"/>
+          <line class="ln" x1="184" y1="138" x2="256" y2="236"/>
+          <line class="ln-dim" x1="256" y1="236" x2="402" y2="178"/>
+          <line class="ln-dim" x1="58" y1="74" x2="126" y2="224"/>
+          <line class="ln" x1="126" y1="224" x2="256" y2="236"/>
+          <circle class="nd" cx="58" cy="74" r="3"/>
+          <circle class="nd" cx="184" cy="138" r="3.5"/>
+          <circle class="nd-warm" cx="318" cy="96" r="4.6"/>
+          <circle class="nd" cx="256" cy="236" r="3"/>
+          <circle class="nd-copper" cx="402" cy="178" r="2.6"/>
+          <circle class="nd-dim" cx="126" cy="224" r="2.4"/>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="section__head reveal-up">
+          <p class="section__eyebrow">团队 / People</p>
+          <h2 class="section__title">在交叉研究中共同成长</h2>
+          <p class="section__desc">导师与研究生构成研究主力，本科生按研究方向参与课题、竞赛与毕设，在真实问题中训练成长。</p>
+        </div>
+        <!-- 各分组由 SITE_DATA.team 渲染 -->
+        <div class="team__blocks" data-render="team"></div>
+      </div>
+    </section>
+
+    <!-- ============ 5. 科研成果 ============ -->
+    <section class="section achievements" id="achievements">
+      <!-- 轻量科研抽象视觉：上升的数据折线(右上，暖金峰值节点) -->
+      <div class="sec-deco sec-deco--achv" aria-hidden="true">
+        <svg viewBox="0 0 440 300" preserveAspectRatio="xMidYMid meet">
+          <circle class="glow" cx="398" cy="70" r="56"/>
+          <line class="ln-dim" x1="44" y1="258" x2="412" y2="258"/>
+          <path class="ln" d="M54 224 L 128 184 L 198 206 L 270 124 L 338 146 L 402 72"/>
+          <circle class="nd-copper" cx="54" cy="224" r="2.6"/>
+          <circle class="nd" cx="128" cy="184" r="2.8"/>
+          <circle class="nd" cx="198" cy="206" r="2.8"/>
+          <circle class="nd" cx="270" cy="124" r="3.2"/>
+          <circle class="nd" cx="338" cy="146" r="2.8"/>
+          <circle class="nd-warm" cx="402" cy="72" r="4.8"/>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="section__head reveal-up">
+          <p class="section__eyebrow">成果 / Output</p>
+          <h2 class="section__title">把想法写成论文，做成系统</h2>
+          <p class="section__desc">以下为代表性论文、获奖与项目；完整论文与引用信息见 Google Scholar。</p>
+          <!-- Google Scholar 外链(只在按钮里使用 href,页面不显示长链接)。
+               本区统计数字为 SITE_DATA 静态数据;Scholar 引用指标条在论文区，由同步管线提供 -->
+          <div class="section__actions reveal-up reveal-delay-1">
+            <a class="btn btn--ghost" href="#publications">论文目录</a>
+            <a class="btn btn--ghost btn--scholar" href="https://scholar.google.com/citations?user=lkDrRmoAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener noreferrer">查看 Google Scholar ↗</a>
+          </div>
+        </div>
+        <!-- 数据指标 -->
+        <div class="stats reveal" data-render="stats"></div>
+        <!-- 成果卡片 -->
+        <div class="achv__grid" data-render="achievements"></div>
+      </div>
+    </section>
+
+    <!-- ============ 5.5 论文目录 / Publications ============ -->
+    <section class="section publications" id="publications">
+      <div class="container">
+        <div class="section__head reveal-up">
+          <p class="section__eyebrow">论文 / Publications</p>
+          <h2 class="section__title">论文目录</h2>
+          <p class="section__desc">本页展示代表性论文；完整论文与最新引用信息以 Google Scholar 为准。</p>
+        </div>
+        <!-- Scholar 引用指标条(部署版由 JS 读取 data/google-scholar-stats.json 注入;
+             file:// 或无数据时本节点保持为空、不占位，见 GOOGLE_SCHOLAR_SYNC.md) -->
+        <div data-render="scholarStats"></div>
+        <!-- 最新论文播报(默认静态数据；部署版若同步到 data/papers.json 会替换为最新一篇) -->
+        <div data-render="latestPaper"></div>
+        <!-- 论文目录列表(轻量列表，非重表格) -->
+        <div class="pub__list" id="papers-list" data-render="papers"></div>
+        <p class="pub__tail reveal-up reveal-delay-1">当前为静态预览内容；部署并配置同步后，本目录将定期读取 Google Scholar 数据。</p>
+      </div>
+    </section>
+
+    <!-- ============ 6. 招生信息 ============ -->
+    <section class="section admission" id="admission">
+      <!-- 轻量科研抽象视觉：上升的加入路径(右上，暖橙+香槟金双焦点，招生略多一点暖意) -->
+      <div class="sec-deco sec-deco--admission" aria-hidden="true">
+        <svg viewBox="0 0 440 300" preserveAspectRatio="xMidYMid meet">
+          <circle class="glow glow--warm" cx="360" cy="84" r="64"/>
+          <path class="ln" d="M44 252 L 132 252 L 132 192 L 222 192 L 222 132 L 312 132 L 312 84 L 404 84"/>
+          <circle class="nd-dim" cx="44" cy="252" r="2.4"/>
+          <circle class="nd" cx="132" cy="192" r="2.8"/>
+          <circle class="nd" cx="222" cy="132" r="3.2"/>
+          <circle class="nd-warm" cx="312" cy="84" r="4.2"/>
+          <circle class="nd-gold" cx="404" cy="84" r="4.6"/>
+        </svg>
+      </div>
+      <div class="container admission__wrap">
+        <div class="section__head reveal-up">
+          <p class="section__eyebrow">招生 / Join Us</p>
+          <h2 class="section__title">欢迎加入严颖课题组</h2>
+        </div>
+        <!-- 招生正文来源: 个人主页招生要求(导师自我介绍为原话节选) -->
+        <div class="admission__lead reveal-up">
+          <p>
+            欢迎<strong>数据科学与大数据技术、人工智能 / 智能科学与技术、自动化 / 控制科学与工程、电气工程及其自动化、
+            生物医学工程、计算机科学与技术、电子信息 / 通信工程、数学 / 统计 / 运筹学、人因工程 / 认知科学</strong>等相关方向的同学报考。
+          </p>
+          <p>希望你有较强的<strong>科研热情和动手能力</strong>，愿意投身交叉学科的研究与实际应用。欢迎跨专业、跨领域但基础扎实的同学积极报考。</p>
+        </div>
+        <div class="admission__cards" data-render="admission"></div>
+        <blockquote class="admission__quote reveal-fade reveal-delay-1">
+          <p>“我不是那种『高冷』型导师，而是『论文写好了吗』+『别慌，我来帮你搞定』的暖心型导师。
+          我不喜欢命令式指导，更喜欢和学生像朋友一样讨论问题、一起成长。”</p>
+          <cite>—— 严颖(导师自我介绍节选，来源：个人主页)</cite>
+        </blockquote>
+        <div class="admission__cta reveal-up reveal-delay-2">
+          <a class="btn btn--primary" href="#contact">联系老师</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. 联系方式 ============ -->
+    <section class="section contact" id="contact">
+      <!-- 轻量科研抽象视觉：汇聚到一个暖金端点的连接环(收尾感) -->
+      <div class="sec-deco sec-deco--contact" aria-hidden="true">
+        <svg viewBox="0 0 440 300" preserveAspectRatio="xMidYMid meet">
+          <circle class="glow" cx="300" cy="150" r="74"/>
+          <path class="ln-dim" d="M300 64 A 86 86 0 1 1 299.9 64"/>
+          <line class="ln-dim" x1="44" y1="150" x2="206" y2="150"/>
+          <line class="ln" x1="206" y1="150" x2="300" y2="150"/>
+          <circle class="nd-dim" cx="44" cy="150" r="2.4"/>
+          <circle class="nd" cx="206" cy="150" r="3"/>
+          <circle class="nd-warm" cx="300" cy="150" r="5"/>
+          <circle class="nd-dim" cx="386" cy="150" r="2.4"/>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="section__head reveal-up">
+          <p class="section__eyebrow">联系 / Contact</p>
+          <h2 class="section__title">联系与交流</h2>
+        </div>
+        <div class="contact__grid">
+          <!-- 官方个人主页(主信息源) -->
+          <a class="contact__card reveal-up reveal-delay-1" href="https://faculty.nuist.edu.cn/yanying/zh_CN/index/110297/list/" target="_blank" rel="noopener noreferrer">
+            <span class="contact__label">官方主页 Homepage</span>
+            <span class="contact__value">严颖老师 · NUIST 个人主页 ↗</span>
+            <span class="contact__hint">faculty.nuist.edu.cn</span>
+          </a>
+          <!-- 邮箱为公开信息，来源: 个人主页 -->
+          <a class="contact__card reveal-up reveal-delay-2" href="mailto:ying.yan@nuist.edu.cn">
+            <span class="contact__label">邮箱 Email</span>
+            <span class="contact__value">ying.yan@nuist.edu.cn</span>
+            <span class="contact__hint">点击发送邮件</span>
+          </a>
+          <!-- 办公地点来源: 个人主页 -->
+          <div class="contact__card reveal-up reveal-delay-3">
+            <span class="contact__label">办公地点 Office</span>
+            <span class="contact__value">学科楼 3 号楼 N505</span>
+            <span class="contact__hint">南京信息工程大学</span>
+          </div>
+          <!-- Google Scholar 外链(完整论文与引用信息) -->
+          <a class="contact__card reveal-up reveal-delay-3" href="https://scholar.google.com/citations?user=lkDrRmoAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener noreferrer">
+            <span class="contact__label">学术主页 Scholar</span>
+            <span class="contact__value">Google Scholar ↗</span>
+            <span class="contact__hint">完整论文与引用信息</span>
+          </a>
+          <!-- 实验室外链 -->
+          <a class="contact__card reveal-up reveal-delay-3" href="https://io.buerka.cn/" target="_blank" rel="noopener">
+            <span class="contact__label">合作实验室 Lab</span>
+            <span class="contact__value">金牛湖脑机实验室 ↗</span>
+            <span class="contact__hint">io.buerka.cn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ 8. 页脚 ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div>
+          <p class="footer__name">Yan Ying Research Group</p>
+          <p class="footer__org">Nanjing University of Information Science and Technology</p>
+        </div>
+      </div>
+      <nav class="footer__links">
+        <a href="#research">研究方向</a>
+        <a href="#team">团队</a>
+        <a href="#achievements">成果</a>
+        <a href="#publications">论文</a>
+        <a href="#admission">招生</a>
+        <a href="#contact">联系</a>
+        <a href="https://faculty.nuist.edu.cn/yanying/zh_CN/index/110297/list/" target="_blank" rel="noopener noreferrer">Faculty Profile ↗</a>
+        <a href="https://scholar.google.com/citations?user=lkDrRmoAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+      </nav>
+    </div>
+    <div class="footer__bottom container">
+      <p>© <span id="year"></span> 严颖课题组 · Yan Ying Research Group · 南京信息工程大学自动化学院。</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

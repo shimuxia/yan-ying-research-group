@@ -1,0 +1,16 @@
+{
+  "name": "yan-ying-research-group-demo",
+  "version": "1.0.0",
+  "description": "南京信息工程大学 · 自动化学院 · 严颖老师个人课题组介绍官网(给老师预览风格用,非上线版)。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "puppeteer-core": "^25.1.0"
+  }
+}
