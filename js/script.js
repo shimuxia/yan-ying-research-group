@@ -621,6 +621,21 @@ const SITE_DATA = {
         if (!papers.length) return;
         renderPapers(listEl, papers, true);
 
+        /* 成果区首个指标：默认静态 70+（SCI 论文）。一旦同步到真实论文列表，
+           用 papers.length 如实更新数字与标签：
+             - 不沿用「SCI 论文」措辞（无法确认同步条目是否全部为 SCI），改为中性的「论文记录」
+             - 不再补「+」（papers.length 是精确条数，不是约数）
+             - 静态回退时（pending / 无数据）此处不执行，仍显示老师确认的 70+ / SCI 论文 */
+        const statNum = $(".stats .stat__num");
+        if (statNum) {
+          statNum.dataset.target = String(papers.length);
+          statNum.dataset.suffix = "";
+          statNum.textContent = String(papers.length);   /* 计数动效可能已跑完，直接定值兜底 */
+          const statEl = statNum.closest(".stat");
+          const statLabel = statEl ? statEl.querySelector(".stat__label") : null;
+          if (statLabel) statLabel.textContent = "论文记录(Google Scholar 同步)";
+        }
+
         /* 最新论文播报：静态块存在时，把内容替换为同步到的最新一篇(textContent,无注入风险) */
         const latestTitle = $(".latest__title");
         const latestMeta = $(".latest__meta");

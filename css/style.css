@@ -820,6 +820,15 @@ a.contact__card:hover .contact__hint { color: var(--link-hi); }
      不掉到第二行成孤字（其余区块保持左侧信息轴的窄行宽不变） */
   .achievements .section__head { max-width: 880px; }
 
+  /* 招生区标题「欢迎加入严颖课题组」桌面端须排成一行：该区左栏较窄
+     （theme-ivory 下为 0.82fr），用随视口收敛的字号 + nowrap，
+     既保证一行不断字、不出现「欢迎加入严／颖课题组」这种怪断行，
+     又不会在窄桌面溢出到右侧正文。移动端不受影响，仍按默认换行。 */
+  .admission .section__title {
+    font-size: clamp(28px, 3.2vw, 44px);
+    white-space: nowrap;
+  }
+
   /* Team:左侧分组标签轴 + 右侧人员信息列,真正横向铺开 */
   .team__block {
     display: grid; grid-template-columns: 186px minmax(0, 1fr);
