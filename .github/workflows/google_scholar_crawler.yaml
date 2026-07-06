@@ -1,0 +1,48 @@
+name: Get Citation Data
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  get-citation-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        working-directory: google_scholar_crawler
+        run: pip install -r requirements.txt
+
+      - name: Get Google Scholar citation data
+        working-directory: google_scholar_crawler
+        env:
+          SERP_API_KEY: ${{ secrets.SERP_API_KEY }}
+          GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
+        run: python3 main.py
+
+      - name: Push JSON to google-scholar-stats branch
+        working-directory: google_scholar_crawler/results
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          test -f gs_data_shieldsio.json
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b google-scholar-stats
+          git add gs_data_shieldsio.json
+          git commit -m "Update Google Scholar citation data"
+          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push --force origin google-scholar-stats
