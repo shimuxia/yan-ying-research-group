@@ -672,6 +672,18 @@ svg { display: block; }
    ========================================================================= */
 .publications { background: var(--bg-soft); }
 
+.scholar-badge {
+  display: inline-flex;
+  margin-top: 18px;
+  line-height: 0;
+  opacity: .9;
+  transition: opacity .3s var(--ease);
+}
+.scholar-badge:hover,
+.scholar-badge:focus-visible { opacity: 1; }
+.scholar-badge:focus-visible { outline: 1px solid var(--accent-line); outline-offset: 5px; border-radius: 2px; }
+.scholar-badge img { display: block; width: auto; max-width: 100%; height: 20px; }
+
 /* Scholar 引用指标条:仅当部署版成功读到 data/google-scholar-stats.json 时由 JS 注入,
    平时挂载点为空、零占位。hairline 上下线 + 三个数字,克制融入,不做卡片。 */
 .sstats { margin-bottom: clamp(36px, 5vh, 56px); }
