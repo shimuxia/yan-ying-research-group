@@ -329,6 +329,30 @@ svg { display: block; }
 }
 .hero__scroll-dot { width: 3px; height: 7px; background: var(--text-2); border-radius: 4px; margin-top: 6px; animation: scrollDot 2s var(--ease) infinite; }
 @keyframes scrollDot { 0%{transform:translateY(0);opacity:1} 70%{transform:translateY(11px);opacity:0} 100%{opacity:0} }
+/* 桌面端:滚动指示器移到右下角(与 Hero 右缘对齐),低透明度弱存在;移动端仍居中 */
+@media (min-width: 901px) {
+  .hero__scroll {
+    left: auto; right: var(--edge-r); transform: none;
+    opacity: .55; transition: opacity .3s var(--ease);
+  }
+  .hero__scroll:hover, .hero__scroll:focus-visible { opacity: 1; }
+}
+
+/* ---------- 超宽屏(1600px+):版心放宽、字号继续随视口生长,两侧留白不再过量 ---------- */
+@media (min-width: 1600px) {
+  .hero__inner { max-width: 2080px; gap: clamp(132px, 11vw, 250px); }
+  .hero__content { max-width: 980px; }
+  .hero__title { font-size: clamp(104px, 6.4vw, 138px); }
+  .hero__title-en { font-size: clamp(16px, 0.95vw, 20px); }
+  .hero__lead { font-size: clamp(21px, 1.2vw, 25px); max-width: 640px; margin-top: 44px; }
+  .hero__actions { margin-top: 54px; }
+  .hero__eyebrow { font-size: 13px; }
+  .hero__aside { min-width: 300px; }
+  .hero__focus-link { padding: 14px 8px; gap: 16px; }
+  .hero__focus-en { font-size: 14.5px; }
+  .hero__focus-no { font-size: 12px; }
+  .hero__aside-label { padding-left: 8px; }
+}
 
 /* ---------- 按钮 — Apple 风格系统字体,克制、精致、轻 ---------- */
 .btn {
