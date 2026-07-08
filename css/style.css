@@ -801,6 +801,9 @@ a.contact__card:hover .contact__hint { color: var(--link-hi); }
 .footer__links a:hover { color: var(--text); }
 .footer__bottom { margin-top: 44px; padding-top: 26px; border-top: 1px solid var(--line-soft); }
 .footer__bottom p { font-size: 12px; color: var(--text-3); }
+.footer__icp { margin-top: 6px; }
+.footer__icp a { color: var(--text-3); transition: color .3s var(--ease); }
+.footer__icp a:hover { color: var(--text-2); }
 
 /* =========================================================================
    V0.14 — Hero 之后区块:宽屏版心 + 不对称布局,左右空间被使用(仅桌面端)
