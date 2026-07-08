@@ -340,7 +340,8 @@ svg { display: block; }
 
 /* ---------- 超宽屏(1600px+):版心放宽、字号继续随视口生长,两侧留白不再过量 ---------- */
 @media (min-width: 1600px) {
-  .hero__inner { max-width: 2080px; gap: clamp(132px, 11vw, 250px); }
+  .hero__inner, .nav__inner { max-width: 2080px; }   /* 同步放宽导航,保持品牌与标题左缘对齐 */
+  .hero__inner { gap: clamp(132px, 11vw, 250px); }
   .hero__content { max-width: 980px; }
   .hero__title { font-size: clamp(104px, 6.4vw, 138px); }
   .hero__title-en { font-size: clamp(16px, 0.95vw, 20px); }
@@ -352,6 +353,22 @@ svg { display: block; }
   .hero__focus-en { font-size: 14.5px; }
   .hero__focus-no { font-size: 12px; }
   .hero__aside-label { padding-left: 8px; }
+  /* 滚动指示器与版心右缘对齐(版心被 max-width 居中后,右缘不再等于视口右缘) */
+  .hero__scroll { right: max(var(--edge-r), calc((100% - 2080px) / 2 + var(--edge-r))); }
+}
+
+/* ---------- 2K/带鱼屏(2200px+):专为 2560×1440 —— 版心占满更多画布,双列拉开 ---------- */
+@media (min-width: 2200px) {
+  .hero__inner, .nav__inner { max-width: 2340px; }
+  .hero__content { max-width: 1080px; }
+  .hero__title { font-size: clamp(138px, 5.9vw, 152px); }
+  .hero__lead { font-size: clamp(25px, 1.05vw, 27px); max-width: 700px; }
+  .hero__aside { min-width: 340px; }
+  .hero__focus-link { padding: 16px 10px; }
+  .hero__focus-en { font-size: 15.5px; }
+  .hero__focus-no { font-size: 12.5px; }
+  .hero__aside-label { padding-left: 10px; }
+  .hero__scroll { right: max(var(--edge-r), calc((100% - 2340px) / 2 + var(--edge-r))); }
 }
 
 /* ---------- 按钮 — Apple 风格系统字体,克制、精致、轻 ---------- */
